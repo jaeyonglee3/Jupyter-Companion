@@ -20,6 +20,10 @@
       {
         "command": "helloworld.hellomars",
         "title": "Hello Mars"
+      },
+      {
+        "command": "helloworld.showPuppy",
+        "title": "Show Puppy"
       }
     ]
   },
