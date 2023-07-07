@@ -16,10 +16,17 @@ export function activate(context: vscode.ExtensionContext) {
 	let disposable = vscode.commands.registerCommand('helloworld.helloWorld', () => {
 		// The code you place here will be executed every time your command is executed
 		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from New Extension (TypeScript)!');
+		vscode.window.showInformationMessage('Hello VS Code');
+	});
+
+	let disposable2 = vscode.commands.registerCommand('helloworld.hellomars', () => {
+		// The code you place here will be executed every time your command is executed
+		// Display a message box to the user
+		vscode.window.showInformationMessage('Hello Mars!');
 	});
 
 	context.subscriptions.push(disposable);
+
 }
 
 // This method is called when your extension is deactivated
