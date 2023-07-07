@@ -16,19 +16,19 @@ export function activate(context: vscode.ExtensionContext) {
 	// Now provide the implementation of the command with registerCommand
 	// The commandId parameter must match the command field in package.json
 	// a disposable object is used to manage resources that need to be cleaned up or disposed of when they are no longer needed.
-	let disposable = vscode.commands.registerCommand('helloworld.helloWorld', () => {
+	let disposableHelloWorld = vscode.commands.registerCommand('helloworld.helloWorld', () => {
 		// The code you place here will be executed every time your command is executed
 		// Display a message box to the user
 		vscode.window.showInformationMessage('Hello VS Code');
 	});
 
-	let disposable2 = vscode.commands.registerCommand('helloworld.hellomars', () => {
+	let disposableHelloMars = vscode.commands.registerCommand('helloworld.hellomars', () => {
 		// The code you place here will be executed every time your command is executed
 		// Display a message box to the user
 		vscode.window.showInformationMessage('Hello Mars!');
 	});
 
-	let disposable3 = vscode.commands.registerCommand('helloworld.showPuppy', () => {
+	let disposablePuppy = vscode.commands.registerCommand('helloworld.showPuppy', () => {
 		// Create a webview panel
 		const panel = vscode.window.createWebviewPanel(
 			'puppyPanel',
@@ -49,11 +49,13 @@ export function activate(context: vscode.ExtensionContext) {
 		const fileContent = fs.readFileSync(filePath.fsPath, 'utf-8');
 		return fileContent;
 	}
-	
+
+	let diagnosticCollection: vscode.DiagnosticCollection;
+
 	// Add the disposable to the context subscriptions
-	context.subscriptions.push(disposable);
-	context.subscriptions.push(disposable2);
-	context.subscriptions.push(disposable3);
+	context.subscriptions.push(disposableHelloWorld);
+	context.subscriptions.push(disposableHelloMars);
+	context.subscriptions.push(disposablePuppy);
 
 }
 
