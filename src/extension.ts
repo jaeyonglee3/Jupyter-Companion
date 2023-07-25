@@ -53,7 +53,7 @@ export function activate(context: vscode.ExtensionContext) {
 		return message;
 	};
 
-	const createNotebook = async () => {
+	const addNewCell = async () => {
 		const activeEditor = vscode.window.activeTextEditor;
 		if (!activeEditor || activeEditor.document.languageId !== 'python') {
 		  vscode.window.showErrorMessage('No .ipynb file is open');
@@ -109,6 +109,6 @@ export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(disposableHelloWorld);
 	context.subscriptions.push(disposableHelloMars);
 	context.subscriptions.push(disposablePuppy);
-	context.subscriptions.push(vscode.commands.registerCommand('helloworld.createNotebook', createNotebook));
+	context.subscriptions.push(vscode.commands.registerCommand('helloworld.addNewCell', addNewCell));
 }
 export function deactivate() {}
