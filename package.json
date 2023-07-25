@@ -14,24 +14,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "helloworld.helloWorld",
-        "title": "Hello World"
-      },
-      {
-        "command": "helloworld.hellomars",
-        "title": "Hello Mars"
-      },
-      {
-        "command": "helloworld.showPuppy",
-        "title": "Show Puppy"
-      },
-      {
         "command": "helloworld.addNewCell",
         "title": "Add cell"
-      },
-      {
-        "command": "helloworld.createNotebook",
-        "title": "Create Notebook"
       }
     ]
   },
