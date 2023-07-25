@@ -6,37 +6,10 @@ const { Configuration, OpenAIApi } = require("openai");
 import * as dotenv from 'dotenv';
 dotenv.config({ path: __dirname + '/../.env' });
 
-// This method is called when your extension is activated
+// This method is called when the extension is activated
 export function activate(context: vscode.ExtensionContext) {
-	console.log('Congratulations, your extension "helloworld" is now active!');
+	console.log('Jupyter Companion is now active!');
 
-	let disposableHelloWorld = vscode.commands.registerCommand('helloworld.helloWorld', () => {
-		vscode.window.showInformationMessage('Hello VS Code');
-	});
-	// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-	let disposableHelloMars = vscode.commands.registerCommand('helloworld.hellomars', () => {
-		vscode.window.showInformationMessage('Hello Mars!');
-	});
-	// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-	let disposablePuppy = vscode.commands.registerCommand('helloworld.showPuppy', () => {
-		const panel = vscode.window.createWebviewPanel(
-			'puppyPanel',
-			'Puppy Picture',
-			vscode.ViewColumn.One,
-			{
-				enableScripts: true
-			}
-		);
-		panel.webview.html = getWebviewContent();
-	});
-	
-	const getWebviewContent = () => {
-		const filePath = vscode.Uri.file(path.join(context.extensionPath, 'src', 'puppy.html'));
-		const fileContent = fs.readFileSync(filePath.fsPath, 'utf-8');
-		return fileContent;
-	};
-
-	// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	const askGpt = async (prompt: string) => {
 		const configuration = new Configuration({
 			apiKey: process.env.OPENAI_API_KEY,
@@ -104,11 +77,7 @@ export function activate(context: vscode.ExtensionContext) {
 		  });
 	  };	  
 
-	// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-	// Add the disposable to the context subscriptions
-	context.subscriptions.push(disposableHelloWorld);
-	context.subscriptions.push(disposableHelloMars);
-	context.subscriptions.push(disposablePuppy);
 	context.subscriptions.push(vscode.commands.registerCommand('helloworld.addNewCell', addNewCell));
 }
+
 export function deactivate() {}
