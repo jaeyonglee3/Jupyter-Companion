@@ -1,16 +1,11 @@
 # Jupyter Companion
 
-This is the README for your extension "helloworld". After writing up a brief description, we recommend including the following sections.
+Jupyter Companion is a powerful VS Code extension designed to enhance your Jupyter notebook experience. With Jupyter Companion, you can effortlessly add new cells to your notebook for any topic or prompt you need. Say goodbye to tedious manual typing or laboriously using GPT in another window or browser. Let the extension handle the content generation for you.
 
 ## Features
-
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+- Utilize the OpenAI API to generate prompt-based content for new cells.
+- Effortlessly add informative cells for programming tutorials, explanations, and more.
+- Enhance your coding and learning experience with AI-powered assistance.
 
 ## Requirements
 
@@ -28,8 +23,7 @@ This extension contributes the following settings:
 * `myExtension.thing`: Set to `blah` to do something.
 
 ## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+- Having more than 1 .ipynb file open at a time may cause an issue where the extension is unable to recognize that a .ipynb file is open (you may be presented the error message "No .ipynb file open")
 
 ## Release Notes
 
