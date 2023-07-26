@@ -1,5 +1,5 @@
 {
-  "name": "helloworld",
+  "name": "jupyter-companion",
   "displayName": "New Extension (TypeScript)",
   "description": "",
   "version": "0.0.1",
@@ -14,7 +14,7 @@
   "contributes": {
     "commands": [
       {
-        "command": "helloworld.addNewCell",
+        "command": "JupyterCompanion.addNewCell",
         "title": "Add cell"
       }
     ]

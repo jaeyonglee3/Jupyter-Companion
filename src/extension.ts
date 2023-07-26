@@ -33,6 +33,19 @@ export function activate(context: vscode.ExtensionContext) {
 		  return;
 		}
 		const filePath = activeEditor.document.uri.fsPath;
+
+		// Prompt the user to enter whether this cell should be markdown or code
+		const markdownOrCode = await vscode.window.showInputBox({
+			placeHolder: 'Enter "markdown" or "code"',
+			prompt: 'Would you like the cell to be a markdown or code cell?',
+		});
+
+		if (!markdownOrCode) {
+			return;
+		} else if (markdownOrCode !== 'markdown' && markdownOrCode !== 'code') {
+			vscode.window.showErrorMessage('Invalid entry! Please enter either "markdown" or "code."');
+			return;
+		}
 	  
 		// Prompt the user to enter the prompt for the new cell
 		const topic = await vscode.window.showInputBox({
@@ -47,8 +60,8 @@ export function activate(context: vscode.ExtensionContext) {
 		askGpt(topic)
 		  .then(async (result) => {
 			const cell = {
-			  cell_type: 'markdown',
-			  source: ["###" + result],
+			  cell_type: markdownOrCode,
+			  source: [result],
 			  metadata: {},
 			  outputs: [],
 			  execution_count: null,
@@ -77,7 +90,7 @@ export function activate(context: vscode.ExtensionContext) {
 		  });
 	  };	  
 
-	context.subscriptions.push(vscode.commands.registerCommand('helloworld.addNewCell', addNewCell));
+	context.subscriptions.push(vscode.commands.registerCommand('JupyterCompanion.addNewCell', addNewCell));
 }
 
 export function deactivate() {}
