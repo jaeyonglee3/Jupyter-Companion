@@ -23,8 +23,7 @@ This extension contributes the following settings:
 * `myExtension.thing`: Set to `blah` to do something.
 
 ## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+- Having more than 1 .ipynb file open at a time may cause an issue where the extension is unable to recognize that a .ipynb file is open (you may be presented the error message "No .ipynb file open")
 
 ## Release Notes
 
