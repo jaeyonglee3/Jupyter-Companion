@@ -1,4 +1,11 @@
-# Jupyter Companion
+
+
+<p align="center">
+  <img width="474" alt="image" src="https://github.com/jaeyonglee3/Jupyter-Companion/assets/73498725/9a932305-80ad-48a6-abda-221a937a7a74">
+</p>
+
+
+# This is Jupyter Companion!
 
 Jupyter Companion is a powerful VS Code extension designed to enhance your Jupyter notebook experience. With Jupyter Companion, you can effortlessly add new cells to your notebook for any topic or prompt you need. Say goodbye to tedious manual typing or laboriously using GPT in another window or browser. Let the extension handle the content generation for you.
 
